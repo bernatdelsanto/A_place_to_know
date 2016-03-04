@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>The Big Picture - Start Bootstrap Template</title>
+    <title>a Place to Know</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 
-   
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -86,34 +86,44 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
-        <div class="column-center-clicked" id="column-center"></div>
-        <div class="column-left-clicked" id="column-left"></div>
-        <div class="column-right-clicked" id="column-right"> <div id="googleMap" style="width:100%; height:100%;">
+    <div class="container wrapper">
+        <div id="column-center"></div>
+        <div id="column-left"></div>
+        <div id="column-right"> <div id="googleMap" style="width:100%; height:100%;">
+    </div>
+        </div>
+            
     </div>
 
+            <!-- /.container -->
 
-    <!-- /.container -->
+            <!-- jQuery -->
+            <script src="js/jquery.js"></script>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-    
-    <script>
-                    $(document).ready(function() {
-                        $("#column-center").click(function() {
-                            $( "#column-center" ).toggleClass("column-center-clicked");
-                            $( "#column-center" ).toggleClass("column-center");
-                            $( "#column-left" ).toggleClass("column-left-clicked");
-                            $( "#column-left" ).toggleClass("column-left");
-                            $( "#column-right" ).toggleClass("column-right-clicked");
-                            $( "#column-right" ).toggleClass("column-right");
-                        });
-                    });
-    </script>
+            <script>
+        $(document).ready(function () {
+            var clicked = true;
+            $("#column-center").click(function () {
+                if (clicked){
+                    $("#column-left").show();
+                    $("#column-left").animate({width: "40%"}, 300);
+                    $("#column-right").animate({width: "55%"}, 300);
+                }else{
+                    $("#column-left").animate({width: "0%"}, 300);
+                    $("#column-right").animate({width: "95%"}, 300 );
+                 }
+                 clicked = !clicked;
+                    
+                });
+        });
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
 
-</body>
+        
+            </script>
 
-</html>
+            <!-- Bootstrap Core JavaScript -->
+            <script src="js/bootstrap.min.js"></script>
+
+      </body>
+
+      </html>
