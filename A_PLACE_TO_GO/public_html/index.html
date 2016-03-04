@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>a Place to Know</title>
+    <title>a Place to Go</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -64,7 +64,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">a Place to Know</a>
+                <a class="navbar-brand" href="#">a Place to Go</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->            
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -88,7 +88,19 @@
     <!-- Page Content -->
     <div class="container wrapper">
         <div id="column-center"></div>
-        <div id="column-left"></div>
+        <div id="column-left">
+             <ul>
+                    <li>
+                        <a href="#">Map</a>
+                    </li>
+                    <li>
+                        <a href="#">Cards</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+              </ul>
+        </div>
         <div id="column-right"> <div id="googleMap" style="width:100%; height:100%;">
     </div>
         </div>
@@ -109,7 +121,9 @@
                     $("#column-left").animate({width: "40%"}, 300);
                     $("#column-right").animate({width: "55%"}, 300);
                 }else{
-                    $("#column-left").animate({width: "0%"}, 300);
+                    $("#column-left").animate({width: "0%"}, 300), function(){
+                        $("#column-left").hide();
+                     };
                     $("#column-right").animate({width: "95%"}, 300 );
                  }
                  clicked = !clicked;
